@@ -10,10 +10,12 @@ SoftwareSerial Serial1(9, 8); // RX, TX
 
 char ssid[] = "istudiofast";            // your network SSID (name)
 char pass[] = "ist123456*";        // your network password
+//const char* ssid     = "ESP32-Access-Point";
+//const char* pass = "123456789";
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 int onstatus = 1;
 int offstatus = 0;
-//IPAddress ip(192,168,0,3);//static IP
+//IPAddress ip(192,168,1,11);//static IP
 char server[] = "192.168.1.101";
 
 unsigned long lastConnectionTime = 0;         // last time you connected to the server, in milliseconds
@@ -30,7 +32,7 @@ void setup()
   // initialize serial for ESP module
   Serial1.begin(9600);
   pinMode(5, OUTPUT); //GREEN ON
-
+pinMode(13,OUTPUT);
   pinMode(7, OUTPUT); //GREEN ON
   pinMode(6, OUTPUT); //RED  PROBLEM
   pinMode(2,INPUT_PULLUP);//switch
@@ -94,7 +96,7 @@ void httpRequest()
    client.connect(server, 80);
       Serial.println("Connecting to station for sending panic ALERT...");
       
-      client.print("PANIC/USER1");
+      client.print("PANIC/1");
       digitalWrite(5,HIGH);
           digitalWrite(13, LOW);
 
@@ -119,7 +121,7 @@ void printWifiStatus()
   Serial.println(WiFi.SSID());
 
   // print your WiFi shield's IP address
-  IPAddress ip = WiFi.localIP();
+ IPAddress ip = WiFi.localIP();
   Serial.print("IP Address: ");
   Serial.println(ip);
 
