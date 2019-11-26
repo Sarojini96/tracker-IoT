@@ -7,7 +7,7 @@ class gpsdata{
  }
  
  function connect(){
-  $this->link = mysqli_connect('localhost','admin','admin123*','fishermantracker') or die('Cannot connect to the DB');
+  $this->link = mysqli_connect('localhost','admin','PASSWORD*','DBNAME') or die('Cannot connect to the DB');
   //mysqli_select_db($this->link,'<temphumidnew>') or die('Cannot select the DB');
  }
  
