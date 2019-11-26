@@ -2,9 +2,9 @@
 
 
 $servername = "localhost";
-$username = "admin";
-$password = "admin123*";
-$dbname = "fishermantracker";
+$username = "*";
+$password = "*";
+$dbname = "*";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -63,7 +63,7 @@ if ($result->num_rows > 0) {  ?>
 <div class="header" style="background-color:black;color:white;text-align: center;
 padding:3px;">
 
-    <h2>Fisher Man Tracker</h2>
+    <h2>Tracker</h2>
 </div> 
     <!--The div element for the map -->
     <div id="map"></div>
@@ -107,7 +107,7 @@ function initMap() {
     * The callback parameter executes the initMap() function
     -->
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB58DI-wfwm4vCjYZ-cvDCb5z9PvrptDlU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=yourapi&callback=initMap">
     </script>
   </body>
 </html>
